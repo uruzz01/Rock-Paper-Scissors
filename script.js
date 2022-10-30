@@ -60,4 +60,4 @@ function playRound(playerSelection, computerSelection)
     }
 }
 
-console.log(playRound(getPlayerChoice(), getComputerChoice()));
+// console.log(playRound(getPlayerChoice(), getComputerChoice()));
