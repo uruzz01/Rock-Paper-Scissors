@@ -82,7 +82,7 @@ function showWinner ()
 {
     if (playerWins === 5)
     {
-        winner.textContent = 'Player won! Reload the page to play again!';
+        winner.textContent = 'Player won!';
         diasbleButtons();
         return;
         
