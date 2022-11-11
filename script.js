@@ -8,12 +8,29 @@ const playerWinsPara = document.querySelector(".playerWins");
 const computerWinsPara = document.querySelector(".computerWins");
 const winner = document.querySelector(".winner");
 const totalRoundsPara = document.querySelector(".totalRounds");
-const restart = document.querySelector('.restart');
+const restart = document.querySelector(".restart");
 
 
-buttons.forEach(button => button.addEventListener("click",playRound) );
+buttons.forEach(button => button.addEventListener("click",playRound));
 
+restart.addEventListener("click", restartGame);
 
+function restartGame () 
+{
+    for (let i = 0; i < buttons.length; i++) 
+    {
+        buttons[i].disabled = false;
+    }
+
+    gamesRound = 0;
+    playerWins = 0;
+    computerWins = 0;
+    totalRoundsPara.textContent = '';
+    playerWinsPara.textContent = '';
+    computerWinsPara.textContent = '';
+    winner.textContent = '';
+
+}
  
 function getComputerChoice()
 {
@@ -73,7 +90,7 @@ function showWinner ()
 
     if(computerWins === 5)
     {  
-        winner.textContent = 'Computer won! Reload the page to play again!';
+        winner.textContent = 'Computer won!';
         diasbleButtons();
         return;
     } 
@@ -134,7 +151,6 @@ function playRound()
     else 
     {
         console.log("invalid item. item should be: 'rock', 'paper', 'scissors'");
-        
     }
 
 }
